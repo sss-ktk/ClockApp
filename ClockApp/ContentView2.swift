@@ -39,13 +39,37 @@ struct ContentView2: View {
     }
     
         var body: some View {
+            let r: CGFloat = 50
+            let numbers: [CGFloat] = [35]
             ZStack {
+                Circle()
+                     .offset(x: 0, y: 0)
+                     .opacity(0.5)
+                     .frame(maxWidth: 10, maxHeight: 10)
+                     .foregroundColor(.blue)
+                ForEach(numbers, id: \.self){ num in
+
+                    if( num == 0){
+                        Circle()
+                             .offset(x: CGFloat(cos(num)) * r, y: CGFloat(sin(num)) * r)
+                             .opacity(1)
+                             .frame(maxWidth: 10, maxHeight: 10)
+                             .foregroundColor(.red)
+                    }
+                    else {
+                        Circle()
+                             .offset(x: r * CGFloat(cos(num)), y: r * CGFloat(sin(num)))
+                             .opacity(1)
+                             .frame(maxWidth: 10, maxHeight: 10)
+                    }
+                  // VX2739wm
+                }
     //            Image(systemName: "globe")
     //                .imageScale(.large)
     //                .foregroundColor(.accentColor)
                 HStack {
                     VStack {
-                        Text("US")
+//                        Text("US")
     
 //                        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
 //                            Text(getToday(format: "MM"))
