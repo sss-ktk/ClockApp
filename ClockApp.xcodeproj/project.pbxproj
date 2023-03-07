@@ -10,7 +10,6 @@
 		B4336FD829A02B9700E644E7 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4336FD729A02B9700E644E7 /* ContentView2.swift */; };
 		B4336FDA29A28C4700E644E7 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4336FD929A28C4700E644E7 /* ClockView.swift */; };
 		B4336FDC29A28CC500E644E7 /* DigitalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4336FDB29A28CC500E644E7 /* DigitalView.swift */; };
-		B4336FDE29A80EB000E644E7 /* AnalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4336FDD29A80EB000E644E7 /* AnalogView.swift */; };
 		B45D6926299C2F8E00920A68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D6925299C2F8E00920A68 /* ContentView.swift */; };
 		B45D6928299C2F9000920A68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45D6927299C2F9000920A68 /* Assets.xcassets */; };
 		B45D692B299C2F9000920A68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45D692A299C2F9000920A68 /* Preview Assets.xcassets */; };
@@ -22,7 +21,6 @@
 		B4336FD729A02B9700E644E7 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		B4336FD929A28C4700E644E7 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		B4336FDB29A28CC500E644E7 /* DigitalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalView.swift; sourceTree = "<group>"; };
-		B4336FDD29A80EB000E644E7 /* AnalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogView.swift; sourceTree = "<group>"; };
 		B45D6920299C2F8E00920A68 /* ClockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45D6925299C2F8E00920A68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B45D6927299C2F9000920A68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,10 +64,8 @@
 				B4336FD729A02B9700E644E7 /* ContentView2.swift */,
 				B4336FD929A28C4700E644E7 /* ClockView.swift */,
 				B4336FDB29A28CC500E644E7 /* DigitalView.swift */,
-				B4336FDD29A80EB000E644E7 /* AnalogView.swift */,
 				B45D6927299C2F9000920A68 /* Assets.xcassets */,
 				B45D6929299C2F9000920A68 /* Preview Content */,
-				B45D6935299C32DF00920A68 /* ViewController.swift */,
 			);
 			path = ClockApp;
 			sourceTree = "<group>";
@@ -77,6 +73,7 @@
 		B45D6929299C2F9000920A68 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				B45D6935299C32DF00920A68 /* ViewController.swift */,
 				B45D692A299C2F9000920A68 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -158,7 +155,6 @@
 				B4336FDC29A28CC500E644E7 /* DigitalView.swift in Sources */,
 				B45D6932299C308C00920A68 /* ClockApp.swift in Sources */,
 				B45D6926299C2F8E00920A68 /* ContentView.swift in Sources */,
-				B4336FDE29A80EB000E644E7 /* AnalogView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
