@@ -17,21 +17,25 @@ struct ClockView: View {
         
         let secondHandColor = Color(hex: "FF0000") // red
         let minuteHandColor = Color(hex: "00FF00") // green
-        let hourHandColor = Color(hex: "0000FF") // blue
+        let hourHandColor = Color(hex: "FFFFFF")
+        
+        let clockHandWidth: CGFloat = 8
+        let clockHandBorderWidth: CGFloat = 2
+        let clockHandBorderColor = Color(hex: "000000")
 
 
         ZStack{
-            ZStack{
-                Circle()
-                    .frame(maxWidth: 10, maxHeight: 10)
-                    .foregroundColor(.orange)
-                    .offset(x: -100)
-                Circle()
-                    .stroke()
-                    .frame(maxWidth: 20, maxHeight: 20)
-                    .foregroundColor(.orange)
-                    .offset(x: 110)
-            }
+//            ZStack{
+//                Circle()
+//                    .frame(maxWidth: 10, maxHeight: 10)
+//                    .foregroundColor(.orange)
+//                    .offset(x: -100)
+//                Circle()
+//                    .stroke()
+//                    .frame(maxWidth: 20, maxHeight: 20)
+//                    .foregroundColor(.orange)
+//                    .offset(x: 110)
+//            }
             ZStack{
                 ForEach(0..<360, id: \.self) { num in
                     if (num % 30 == 0){
@@ -61,24 +65,29 @@ struct ClockView: View {
                 }
             }
             ZStack{
+                Circle()
+                    .fill(.blue)
+                    .opacity(0.5)
+                    .frame(width: 20, height: 20, alignment: .center)
                 Rectangle()
                     .fill(secondHandColor)
                     .frame(width: 2, height: 100)
-                    .offset(y: -40)
+                    .offset(y: -55)
                     .rotationEffect(Angle(degrees: Double(Calendar.current.component(.second, from: currentTime)) / 60 * 360))
                     .animation(.linear(duration: 1), value: currentTime)
-                    .rotationEffect(.degrees(180), anchor: .center) // <-- added this line
+                    .rotationEffect(.degrees(180), anchor: .center) // <-- added this line to always rotate clock wise even when hitting 60 sec from 59 sec
 
                 Rectangle()
                     .fill(minuteHandColor)
                     .frame(width: 4, height: 70)
-                    .offset(y: -35)
+                    .offset(y: -40)
                     .rotationEffect(Angle(degrees: Double(Calendar.current.component(.minute, from: currentTime)) / 60 * 360))
-
+                
                 Rectangle()
                     .fill(hourHandColor)
-                    .frame(width: 4, height: 50)
-                    .offset(y: -25)
+                    .frame(width: clockHandWidth, height: 70)
+                    .border(clockHandBorderColor, width: clockHandBorderWidth)
+                    .offset(y: -40)
                     .rotationEffect(Angle(degrees: Double(Calendar.current.component(.hour, from: currentTime)) / 12 * 360))
             }
             .padding()

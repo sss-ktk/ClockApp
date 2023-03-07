@@ -82,13 +82,15 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-          ClockView()
+//          ClockView()
+            TestView()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+//        ContentView()
+        TestView()
     }
 }

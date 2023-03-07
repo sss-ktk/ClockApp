@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4336FD829A02B9700E644E7 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4336FD729A02B9700E644E7 /* ContentView2.swift */; };
 		B4336FDA29A28C4700E644E7 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4336FD929A28C4700E644E7 /* ClockView.swift */; };
 		B4336FDC29A28CC500E644E7 /* DigitalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4336FDB29A28CC500E644E7 /* DigitalView.swift */; };
 		B45D6926299C2F8E00920A68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D6925299C2F8E00920A68 /* ContentView.swift */; };
@@ -15,10 +14,10 @@
 		B45D692B299C2F9000920A68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45D692A299C2F9000920A68 /* Preview Assets.xcassets */; };
 		B45D6932299C308C00920A68 /* ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D6931299C308C00920A68 /* ClockApp.swift */; };
 		B45D6936299C32DF00920A68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D6935299C32DF00920A68 /* ViewController.swift */; };
+		B4EDBD6829B7FAAF00DB32B1 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDBD6729B7FAAF00DB32B1 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B4336FD729A02B9700E644E7 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		B4336FD929A28C4700E644E7 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		B4336FDB29A28CC500E644E7 /* DigitalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalView.swift; sourceTree = "<group>"; };
 		B45D6920299C2F8E00920A68 /* ClockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +26,7 @@
 		B45D692A299C2F9000920A68 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B45D6931299C308C00920A68 /* ClockApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockApp.swift; sourceTree = "<group>"; };
 		B45D6935299C32DF00920A68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B4EDBD6729B7FAAF00DB32B1 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +61,9 @@
 			children = (
 				B45D6931299C308C00920A68 /* ClockApp.swift */,
 				B45D6925299C2F8E00920A68 /* ContentView.swift */,
-				B4336FD729A02B9700E644E7 /* ContentView2.swift */,
 				B4336FD929A28C4700E644E7 /* ClockView.swift */,
 				B4336FDB29A28CC500E644E7 /* DigitalView.swift */,
+				B4EDBD6729B7FAAF00DB32B1 /* TestView.swift */,
 				B45D6927299C2F9000920A68 /* Assets.xcassets */,
 				B45D6929299C2F9000920A68 /* Preview Content */,
 			);
@@ -149,9 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4EDBD6829B7FAAF00DB32B1 /* TestView.swift in Sources */,
 				B45D6936299C32DF00920A68 /* ViewController.swift in Sources */,
 				B4336FDA29A28C4700E644E7 /* ClockView.swift in Sources */,
-				B4336FD829A02B9700E644E7 /* ContentView2.swift in Sources */,
 				B4336FDC29A28CC500E644E7 /* DigitalView.swift in Sources */,
 				B45D6932299C308C00920A68 /* ClockApp.swift in Sources */,
 				B45D6926299C2F8E00920A68 /* ContentView.swift in Sources */,
