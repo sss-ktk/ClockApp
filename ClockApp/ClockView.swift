@@ -10,7 +10,8 @@ import UIKit
 
 struct ClockView: View {
     @State private var currentDate = Date()
-    @State private var previousSecond = Calendar.current.component(.second, from: Date())
+    @State private var timeZone = TimeZone.current
+
     private let timer = Timer.publish(every: 0.01, on: .current, in: .default).autoconnect()
     
     var body: some View {
@@ -36,34 +37,35 @@ struct ClockView: View {
 //                    .foregroundColor(.orange)
 //                    .offset(x: 110)
 //            }
-            ZStack{
-                ForEach(0..<360, id: \.self) { num in
-                    if (num % 30 == 0){
-                        Rectangle()
-                            .offset(y: -150)
-                            .frame(maxWidth: 4, maxHeight: 10)
-                            .foregroundColor(.black)
-                            .rotationEffect(.degrees(Double(num)))
-                            .opacity(0.4)
-                    }
-                    else if (num % 6 == 0) {
-                        Rectangle()
-                            .offset(y: -150)
-                            .frame(maxWidth: 1, maxHeight: 5)
-                            .foregroundColor(.black)
-                            .rotationEffect(.degrees(Double(num)))
-                            .opacity(0.2)
-                    }
-                    else if (num % 3 == 0) {
-                        Rectangle()
-                            .offset(y: -150)
-                            .frame(maxWidth: 1, maxHeight: 3)
-                            .foregroundColor(.black)
-                            .rotationEffect(.degrees(Double(num)))
-                            .opacity(0.2)
-                    }
-                }
-            }
+            
+//            ZStack{
+//                ForEach(0..<360, id: \.self) { num in
+//                    if (num % 30 == 0){
+//                        Rectangle()
+//                            .offset(y: -150)
+//                            .frame(maxWidth: 4, maxHeight: 10)
+//                            .foregroundColor(.black)
+//                            .rotationEffect(.degrees(Double(num)))
+//                            .opacity(0.4)
+//                    }
+//                    else if (num % 6 == 0) {
+//                        Rectangle()
+//                            .offset(y: -150)
+//                            .frame(maxWidth: 1, maxHeight: 5)
+//                            .foregroundColor(.black)
+//                            .rotationEffect(.degrees(Double(num)))
+//                            .opacity(0.2)
+//                    }
+//                    else if (num % 3 == 0) {
+//                        Rectangle()
+//                            .offset(y: -150)
+//                            .frame(maxWidth: 1, maxHeight: 3)
+//                            .foregroundColor(.black)
+//                            .rotationEffect(.degrees(Double(num)))
+//                            .opacity(0.2)
+//                    }
+//                }
+//            }
             ZStack{
                 Circle()
                     .fill(.blue)
