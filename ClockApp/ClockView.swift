@@ -9,9 +9,9 @@ import SwiftUI
 import UIKit
 
 struct ClockView: View {
-    @State private var currentTime = Date()
-    
-//    let r: CGFloat =  100
+    @State private var currentDate = Date()
+    @State private var previousSecond = Calendar.current.component(.second, from: Date())
+    private let timer = Timer.publish(every: 0.01, on: .current, in: .default).autoconnect()
     
     var body: some View {
         
@@ -69,36 +69,55 @@ struct ClockView: View {
                     .fill(.blue)
                     .opacity(0.5)
                     .frame(width: 20, height: 20, alignment: .center)
+                
                 Rectangle()
                     .fill(secondHandColor)
                     .frame(width: 2, height: 100)
                     .offset(y: -55)
-                    .rotationEffect(Angle(degrees: Double(Calendar.current.component(.second, from: currentTime)) / 60 * 360))
-                    .animation(.linear(duration: 1), value: currentTime)
-                    .rotationEffect(.degrees(180), anchor: .center) // <-- added this line to always rotate clock wise even when hitting 60 sec from 59 sec
+                    .rotationEffect(secondHandRotation())
 
                 Rectangle()
                     .fill(minuteHandColor)
                     .frame(width: 4, height: 70)
                     .offset(y: -40)
-                    .rotationEffect(Angle(degrees: Double(Calendar.current.component(.minute, from: currentTime)) / 60 * 360))
+                    .rotationEffect(minuteHandRotation())
                 
                 Rectangle()
                     .fill(hourHandColor)
                     .frame(width: clockHandWidth, height: 70)
                     .border(clockHandBorderColor, width: clockHandBorderWidth)
                     .offset(y: -40)
-                    .rotationEffect(Angle(degrees: Double(Calendar.current.component(.hour, from: currentTime)) / 12 * 360))
+                    .rotationEffect(hourHandRotation())
             }
             .padding()
             .aspectRatio(contentMode: .fit)
             }
-            .onAppear {
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                    self.currentTime = Date()
+            .onReceive(timer) { input in
+                withAnimation(.linear(duration: 0.01)) {
+                    currentDate = input
                 }
             }
             
+    }
+    private func secondHandRotation() -> Angle {
+        let calendar = Calendar.current
+        let second = calendar.component(.second, from: currentDate)
+        let millisecond = calendar.component(.nanosecond, from: currentDate) / 1_000_000
+        return Angle.degrees(Double(second) * 6 + Double(millisecond) * 0.006)
+    }
+    
+    private func minuteHandRotation() -> Angle {
+        let calendar = Calendar.current
+        let minute = calendar.component(.minute, from: currentDate)
+        let second = calendar.component(.second, from: currentDate)
+        return Angle.degrees(Double(minute) * 6 + Double(second) * 0.1)
+    }
+    
+    private func hourHandRotation() -> Angle {
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: currentDate)
+        let minute = calendar.component(.minute, from: currentDate)
+        return Angle.degrees(Double(hour) * 30 + Double(minute) * 0.5)
     }
 }
 
