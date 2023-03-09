@@ -18,54 +18,18 @@ struct ClockView: View {
         
         let secondHandColor = Color(hex: "FF0000") // red
         let minuteHandColor = Color(hex: "00FF00") // green
-        let hourHandColor = Color(hex: "FFFFFF")
+        let hourHandColor = Color(hex: "00FF00")
         
-        let clockHandWidth: CGFloat = 8
-        let clockHandBorderWidth: CGFloat = 2
-        let clockHandBorderColor = Color(hex: "000000")
-
+        let clockHandWidth: CGFloat = 4
+//        let clockHandBorderWidth: CGFloat = 2
+//        let clockHandBorderColor = Color(hex: "000000")
+        
+        let secondHandLength: CGFloat = 150
+        let minuteHandLength: CGFloat = 100
+        let hourHandLength: CGFloat = 70
 
         ZStack{
-//            ZStack{
-//                Circle()
-//                    .frame(maxWidth: 10, maxHeight: 10)
-//                    .foregroundColor(.orange)
-//                    .offset(x: -100)
-//                Circle()
-//                    .stroke()
-//                    .frame(maxWidth: 20, maxHeight: 20)
-//                    .foregroundColor(.orange)
-//                    .offset(x: 110)
-//            }
-            
-//            ZStack{
-//                ForEach(0..<360, id: \.self) { num in
-//                    if (num % 30 == 0){
-//                        Rectangle()
-//                            .offset(y: -150)
-//                            .frame(maxWidth: 4, maxHeight: 10)
-//                            .foregroundColor(.black)
-//                            .rotationEffect(.degrees(Double(num)))
-//                            .opacity(0.4)
-//                    }
-//                    else if (num % 6 == 0) {
-//                        Rectangle()
-//                            .offset(y: -150)
-//                            .frame(maxWidth: 1, maxHeight: 5)
-//                            .foregroundColor(.black)
-//                            .rotationEffect(.degrees(Double(num)))
-//                            .opacity(0.2)
-//                    }
-//                    else if (num % 3 == 0) {
-//                        Rectangle()
-//                            .offset(y: -150)
-//                            .frame(maxWidth: 1, maxHeight: 3)
-//                            .foregroundColor(.black)
-//                            .rotationEffect(.degrees(Double(num)))
-//                            .opacity(0.2)
-//                    }
-//                }
-//            }
+//            Color.black.ignoresSafeArea()
             ZStack{
                 Circle()
                     .fill(.blue)
@@ -74,21 +38,20 @@ struct ClockView: View {
                 
                 Rectangle()
                     .fill(secondHandColor)
-                    .frame(width: 2, height: 100)
-                    .offset(y: -55)
+                    .frame(width: 2, height: secondHandLength)
+                    .offset(y: -(secondHandLength/2))
                     .rotationEffect(secondHandRotation())
 
                 Rectangle()
                     .fill(minuteHandColor)
-                    .frame(width: 4, height: 70)
-                    .offset(y: -40)
+                    .frame(width: 4, height: minuteHandLength)
+                    .offset(y: -(minuteHandLength/2))
                     .rotationEffect(minuteHandRotation())
                 
                 Rectangle()
                     .fill(hourHandColor)
-                    .frame(width: clockHandWidth, height: 70)
-                    .border(clockHandBorderColor, width: clockHandBorderWidth)
-                    .offset(y: -40)
+                    .frame(width: clockHandWidth, height: hourHandLength)
+                    .offset(y: -(hourHandLength/2))
                     .rotationEffect(hourHandRotation())
             }
             .padding()
