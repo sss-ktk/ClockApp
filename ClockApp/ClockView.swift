@@ -31,6 +31,7 @@ struct ClockView: View {
         ZStack{
 //            Color.black.ignoresSafeArea()
             ZStack{
+//                _1_HandDesign()
                 Circle()
                     .fill(.blue)
                     .opacity(0.5)
@@ -48,10 +49,14 @@ struct ClockView: View {
                     .offset(y: -(minuteHandLength/2))
                     .rotationEffect(minuteHandRotation())
                 
-                Rectangle()
-                    .fill(hourHandColor)
-                    .frame(width: clockHandWidth, height: hourHandLength)
-                    .offset(y: -(hourHandLength/2))
+//                Rectangle()
+//                    .fill(hourHandColor)
+//                    .frame(width: clockHandWidth, height: hourHandLength)
+//                    .offset(y: -(hourHandLength/2))
+//                    .rotationEffect(hourHandRotation())
+                _1_HandDesign()
+                    .offset(y: -(hourHandLength/2) + 60)
+                    .offset(x: -90)
                     .rotationEffect(hourHandRotation())
             }
             .padding()
@@ -90,6 +95,8 @@ struct ClockView: View {
 struct ClockView_Previews: PreviewProvider {
     static var previews: some View {
         ClockView()
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            .background(Color.black)
     }
 }
 

@@ -19,17 +19,23 @@ struct _1_HandDesign: View {
             let screenHeight = UIScreen.main.bounds.height
             let screenWidth = UIScreen.main.bounds.width
             
-            let widthHalf = screenWidth / 2
+//            let widthHalf = screenWidth / 2
                 
-            let symbolColor = Color(red: 79.0 / 255, green: 79.0 / 255, blue: 191.0 / 255)
+//            let symbolColor = Color(red: 79.0 / 255, green: 79.0 / 255, blue: 191.0 / 255)
             let c2 = Color(red: 0 / 255, green: 79.0 / 255, blue: 191.0 / 255)
                 
             Path { path in
+//                path.addLines([
+//                    CGPoint(x: screenWidth * 0.5 , y: screenHeight * 0.5 - 130),
+//                    CGPoint(x: screenWidth * 0.5 + 2, y: screenHeight * 0.5 - 50),
+//                    CGPoint(x: screenWidth * 0.5 - 2, y: screenHeight * 0.5 - 50)
+//                ])
                 path.addLines([
-                    CGPoint(x: screenWidth * 0.5 , y: screenHeight * 0.5 ),
-                    CGPoint(x: screenWidth * 0.5 + 2, y: screenHeight * 0.5 + 80),
-                    CGPoint(x: screenWidth * 0.5 - 2, y: screenHeight * 0.5 + 80)
-                ])
+                   CGPoint(x: 196 , y: 255),
+                   CGPoint(x: 198, y: 376),
+                   CGPoint(x: 194, y: 376)
+               ])
+                
             }
             .fill(c2)
 
