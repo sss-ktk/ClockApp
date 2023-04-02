@@ -11,16 +11,8 @@
 		B4336FDC29A28CC500E644E7 /* DigitalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4336FDB29A28CC500E644E7 /* DigitalView.swift */; };
 		B434232229B9298C009EF812 /* AnalogClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B434232129B9298C009EF812 /* AnalogClock.swift */; };
 		B434232429B9315C009EF812 /* TimeMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B434232329B9315C009EF812 /* TimeMark.swift */; };
-		B434232C29B946E1009EF812 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B434232B29B946E1009EF812 /* WidgetKit.framework */; };
-		B434232E29B946E1009EF812 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B434232D29B946E1009EF812 /* SwiftUI.framework */; };
-		B434233129B946E2009EF812 /* MediumBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B434233029B946E2009EF812 /* MediumBundle.swift */; };
-		B434233329B946E2009EF812 /* MediumLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B434233229B946E2009EF812 /* MediumLiveActivity.swift */; };
-		B434233529B946E2009EF812 /* Medium.swift in Sources */ = {isa = PBXBuildFile; fileRef = B434233429B946E2009EF812 /* Medium.swift */; };
-		B434233829B946E3009EF812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B434233729B946E3009EF812 /* Assets.xcassets */; };
-		B434233A29B946E3009EF812 /* Medium.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B434233629B946E2009EF812 /* Medium.intentdefinition */; };
-		B434233B29B946E3009EF812 /* Medium.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B434233629B946E2009EF812 /* Medium.intentdefinition */; };
-		B434233E29B946E3009EF812 /* MediumExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B434232929B946E1009EF812 /* MediumExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B434234729BA91E1009EF812 /* 01_HandDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = B434234629BA91E1009EF812 /* 01_HandDesign.swift */; };
+		B434234B29CC3D6D009EF812 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B434234A29CC3D6D009EF812 /* Demo.swift */; };
 		B45D6926299C2F8E00920A68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D6925299C2F8E00920A68 /* ContentView.swift */; };
 		B45D6928299C2F9000920A68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45D6927299C2F9000920A68 /* Assets.xcassets */; };
 		B45D692B299C2F9000920A68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45D692A299C2F9000920A68 /* Preview Assets.xcassets */; };
@@ -29,45 +21,15 @@
 		B4EDBD6829B7FAAF00DB32B1 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDBD6729B7FAAF00DB32B1 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B434233C29B946E3009EF812 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B45D6918299C2F8E00920A68 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B434232829B946E1009EF812;
-			remoteInfo = MediumExtension;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B434234229B946E3009EF812 /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				B434233E29B946E3009EF812 /* MediumExtension.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		B4336FD929A28C4700E644E7 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		B4336FDB29A28CC500E644E7 /* DigitalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalView.swift; sourceTree = "<group>"; };
 		B434232129B9298C009EF812 /* AnalogClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogClock.swift; sourceTree = "<group>"; };
 		B434232329B9315C009EF812 /* TimeMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMark.swift; sourceTree = "<group>"; };
-		B434232929B946E1009EF812 /* MediumExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MediumExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B434232B29B946E1009EF812 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B434232D29B946E1009EF812 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		B434233029B946E2009EF812 /* MediumBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumBundle.swift; sourceTree = "<group>"; };
-		B434233229B946E2009EF812 /* MediumLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumLiveActivity.swift; sourceTree = "<group>"; };
-		B434233429B946E2009EF812 /* Medium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
-		B434233629B946E2009EF812 /* Medium.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Medium.intentdefinition; sourceTree = "<group>"; };
-		B434233729B946E3009EF812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B434233929B946E3009EF812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B434234629BA91E1009EF812 /* 01_HandDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 01_HandDesign.swift; sourceTree = "<group>"; };
+		B434234A29CC3D6D009EF812 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		B45D6920299C2F8E00920A68 /* ClockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45D6925299C2F8E00920A68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B45D6927299C2F9000920A68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,15 +40,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B434232629B946E1009EF812 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B434232E29B946E1009EF812 /* SwiftUI.framework in Frameworks */,
-				B434232C29B946E1009EF812 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B45D691D299C2F8E00920A68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,19 +59,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B434232F29B946E2009EF812 /* Medium */ = {
-			isa = PBXGroup;
-			children = (
-				B434233029B946E2009EF812 /* MediumBundle.swift */,
-				B434233229B946E2009EF812 /* MediumLiveActivity.swift */,
-				B434233429B946E2009EF812 /* Medium.swift */,
-				B434233629B946E2009EF812 /* Medium.intentdefinition */,
-				B434233729B946E3009EF812 /* Assets.xcassets */,
-				B434233929B946E3009EF812 /* Info.plist */,
-			);
-			path = Medium;
-			sourceTree = "<group>";
-		};
 		B434234329BA9176009EF812 /* HandDesign */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +70,6 @@
 		B45D6917299C2F8E00920A68 = {
 			isa = PBXGroup;
 			children = (
-				B434232F29B946E2009EF812 /* Medium */,
 				B45D6922299C2F8E00920A68 /* ClockApp */,
 				B434232A29B946E1009EF812 /* Frameworks */,
 				B45D6921299C2F8E00920A68 /* Products */,
@@ -141,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				B45D6920299C2F8E00920A68 /* ClockApp.app */,
-				B434232929B946E1009EF812 /* MediumExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +97,7 @@
 				B45D6929299C2F9000920A68 /* Preview Content */,
 				B434232129B9298C009EF812 /* AnalogClock.swift */,
 				B434232329B9315C009EF812 /* TimeMark.swift */,
+				B434234A29CC3D6D009EF812 /* Demo.swift */,
 			);
 			path = ClockApp;
 			sourceTree = "<group>";
@@ -175,23 +114,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B434232829B946E1009EF812 /* MediumExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B434233F29B946E3009EF812 /* Build configuration list for PBXNativeTarget "MediumExtension" */;
-			buildPhases = (
-				B434232529B946E1009EF812 /* Sources */,
-				B434232629B946E1009EF812 /* Frameworks */,
-				B434232729B946E1009EF812 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MediumExtension;
-			productName = MediumExtension;
-			productReference = B434232929B946E1009EF812 /* MediumExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		B45D691F299C2F8E00920A68 /* ClockApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B45D692E299C2F9000920A68 /* Build configuration list for PBXNativeTarget "ClockApp" */;
@@ -199,12 +121,10 @@
 				B45D691C299C2F8E00920A68 /* Sources */,
 				B45D691D299C2F8E00920A68 /* Frameworks */,
 				B45D691E299C2F8E00920A68 /* Resources */,
-				B434234229B946E3009EF812 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B434233D29B946E3009EF812 /* PBXTargetDependency */,
 			);
 			name = ClockApp;
 			productName = ClockApp;
@@ -221,9 +141,6 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					B434232829B946E1009EF812 = {
-						CreatedOnToolsVersion = 14.2;
-					};
 					B45D691F299C2F8E00920A68 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -243,20 +160,11 @@
 			projectRoot = "";
 			targets = (
 				B45D691F299C2F8E00920A68 /* ClockApp */,
-				B434232829B946E1009EF812 /* MediumExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B434232729B946E1009EF812 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B434233829B946E3009EF812 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B45D691E299C2F8E00920A68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,17 +177,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B434232529B946E1009EF812 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B434233529B946E2009EF812 /* Medium.swift in Sources */,
-				B434233A29B946E3009EF812 /* Medium.intentdefinition in Sources */,
-				B434233129B946E2009EF812 /* MediumBundle.swift in Sources */,
-				B434233329B946E2009EF812 /* MediumLiveActivity.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B45D691C299C2F8E00920A68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,7 +184,7 @@
 				B4EDBD6829B7FAAF00DB32B1 /* TestView.swift in Sources */,
 				B434234729BA91E1009EF812 /* 01_HandDesign.swift in Sources */,
 				B45D6936299C32DF00920A68 /* ViewController.swift in Sources */,
-				B434233B29B946E3009EF812 /* Medium.intentdefinition in Sources */,
+				B434234B29CC3D6D009EF812 /* Demo.swift in Sources */,
 				B4336FDA29A28C4700E644E7 /* ClockView.swift in Sources */,
 				B434232429B9315C009EF812 /* TimeMark.swift in Sources */,
 				B4336FDC29A28CC500E644E7 /* DigitalView.swift in Sources */,
@@ -299,69 +196,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		B434233D29B946E3009EF812 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B434232829B946E1009EF812 /* MediumExtension */;
-			targetProxy = B434233C29B946E3009EF812 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		B434234029B946E3009EF812 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S46H9HW89D;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Medium/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Medium;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.sssktk.ClockApp.Medium;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B434234129B946E3009EF812 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S46H9HW89D;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Medium/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Medium;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.sssktk.ClockApp.Medium;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		B45D692C299C2F9000920A68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -479,7 +314,6 @@
 		B45D692F299C2F9000920A68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -509,7 +343,6 @@
 		B45D6930299C2F9000920A68 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,15 +372,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B434233F29B946E3009EF812 /* Build configuration list for PBXNativeTarget "MediumExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B434234029B946E3009EF812 /* Debug */,
-				B434234129B946E3009EF812 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B45D691B299C2F8E00920A68 /* Build configuration list for PBXProject "ClockApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

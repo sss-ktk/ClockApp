@@ -16,7 +16,7 @@ struct ClockView: View {
     
     var body: some View {
         
-        let secondHandColor = Color(hex: "FF0000") // red
+//        let secondHandColor = Color(hex: "FF0000") // red
         let minuteHandColor = Color(hex: "00FF00") // green
         let hourHandColor = Color(hex: "00FF00")
         
@@ -24,7 +24,7 @@ struct ClockView: View {
 //        let clockHandBorderWidth: CGFloat = 2
 //        let clockHandBorderColor = Color(hex: "000000")
         
-        let secondHandLength: CGFloat = 150
+//        let secondHandLength: CGFloat = 150
         let minuteHandLength: CGFloat = 100
         let hourHandLength: CGFloat = 70
 
@@ -37,10 +37,10 @@ struct ClockView: View {
                     .opacity(0.5)
                     .frame(width: 20, height: 20, alignment: .center)
                 
-                Rectangle()
+//                Rectangle()
 //                    .fill(secondHandColor)
-                    .frame(width: 2, height: secondHandLength)
-                    .offset(y: -(secondHandLength/2))
+//                    .frame(width: 2, height: secondHandLength)
+//                    .offset(y: -(secondHandLength/2))
 //                    .rotationEffect(secondHandRotation())
 
                 Rectangle()
@@ -55,9 +55,12 @@ struct ClockView: View {
                     .offset(y: -(hourHandLength/2))
                     .rotationEffect(hourHandRotation())
                 _1_HandDesign()
-                    .offset(y: -(hourHandLength/2) + 60)
-                    .offset(x: -90)
+//                    .offset(y: -(hourHandLength/2) + 60)
+//                    .offset(x: -90)
+//                    .position(y:1)
                     .rotationEffect(secondHandRotation())
+//                    .offset(y: -(hourHandLength/2))
+//                    .offset(x: 40)
             }
             .padding()
             .aspectRatio(contentMode: .fit)
