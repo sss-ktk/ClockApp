@@ -10,15 +10,17 @@ import UIKit
 
 struct Demo: View {
     @State private var currentDate = Date()
-    @State private var timeZone = TimeZone.current
+//    @State private var timeZone = TimeZone.current
+    let timeZone: TimeZone
+
 
     private let timer = Timer.publish(every: 0.01, on: .current, in: .default).autoconnect()
     
     var body: some View {
         GeometryReader { geometry in
             
-            let width = geometry.size.width
-            let height = geometry.size.height
+//            let width = geometry.size.width
+//            let height = geometry.size.height
             //        let secondHandColor = Color(hex: "FF0000") // red
 //            let minuteHandColor = Color(hex: "00FF00") // green
 //            let hourHandColor = Color(hex: "00FF00")
@@ -42,7 +44,7 @@ struct Demo: View {
                 _1_HandDesign()
                     .rotationEffect(minuteHandRotation())
                 
-                _1_HandDesign()
+                _1_MinDesign()
                     .rotationEffect(hourHandRotation())
                 
                 _1_SecDesign()
@@ -51,6 +53,8 @@ struct Demo: View {
             }
             .onReceive(timer) { input in
                 withAnimation(.linear(duration: 0.01)) {
+                    var calendar = Calendar.current
+                    calendar.timeZone = timeZone
                     currentDate = input
                 }
             }
@@ -60,21 +64,24 @@ struct Demo: View {
     }
     
     private func secondHandRotation() -> Angle {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = timeZone
         let second = calendar.component(.second, from: currentDate)
         let millisecond = calendar.component(.nanosecond, from: currentDate) / 1_000_000
         return Angle.degrees(Double(second) * 6 + Double(millisecond) * 0.006)
     }
     
     private func minuteHandRotation() -> Angle {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = timeZone
         let minute = calendar.component(.minute, from: currentDate)
         let second = calendar.component(.second, from: currentDate)
         return Angle.degrees(Double(minute) * 6 + Double(second) * 0.1)
     }
     
     private func hourHandRotation() -> Angle {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = timeZone
         let hour = calendar.component(.hour, from: currentDate)
         let minute = calendar.component(.minute, from: currentDate)
         return Angle.degrees(Double(hour) * 30 + Double(minute) * 0.5)
@@ -84,7 +91,7 @@ struct Demo: View {
 
 struct Demo_Previews: PreviewProvider {
     static var previews: some View {
-        Demo()
+    Demo(timeZone: TimeZone(identifier: "America/Los_Angeles")!)
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .background(Color.gray)
     }

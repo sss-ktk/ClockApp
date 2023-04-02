@@ -26,20 +26,20 @@ struct _1_HandDesign: View {
                 
             Path { path in
                 path.addLines([
-                    CGPoint(x: width * 0.5 , y: height * 0.5 - 130),
-                    CGPoint(x: width * 0.5 + 2 , y: height * 0.5 - 120),
+                    CGPoint(x: width * 0.5 , y: height * 0.5 - 150),
+                    CGPoint(x: width * 0.5 + 2 , y: height * 0.5 - 140),
                     CGPoint(x: width * 0.5 + 2, y: height * 0.5 - 5),
                     CGPoint(x: width * 0.5 - 2, y: height * 0.5 - 5),
-                    CGPoint(x: width * 0.5 - 2  , y: height * 0.5 - 120),
+                    CGPoint(x: width * 0.5 - 2  , y: height * 0.5 - 140),
                 ])
             }.fill(Color.white)
             
             Path { path in
                 path.addLines([
-                    CGPoint(x: width * 0.5 + 1 , y: height * 0.5 - 115),
+                    CGPoint(x: width * 0.5 + 1 , y: height * 0.5 - 135),
                     CGPoint(x: width * 0.5 + 1, y: height * 0.5 - 15),
                     CGPoint(x: width * 0.5 - 1, y: height * 0.5 - 15),
-                    CGPoint(x: width * 0.5 - 1  , y: height * 0.5 - 115),
+                    CGPoint(x: width * 0.5 - 1  , y: height * 0.5 - 135),
                 ])
             }
             .fill(Color.gray)
@@ -54,6 +54,39 @@ struct _1_HandDesign: View {
     }
     
 }
+
+struct _1_MinDesign: View {
+    
+    var body: some View {
+        GeometryReader { geometry in
+            let width = geometry.size.width
+            let height = geometry.size.height
+                
+            Path { path in
+                path.addLines([
+                    CGPoint(x: width * 0.5 , y: height * 0.5 - 110),
+                    CGPoint(x: width * 0.5 + 2 , y: height * 0.5 - 100),
+                    CGPoint(x: width * 0.5 + 2, y: height * 0.5 - 5),
+                    CGPoint(x: width * 0.5 - 2, y: height * 0.5 - 5),
+                    CGPoint(x: width * 0.5 - 2  , y: height * 0.5 - 100),
+                ])
+            }.fill(Color.white)
+            
+            Path { path in
+                path.addLines([
+                    CGPoint(x: width * 0.5 + 1 , y: height * 0.5 - 95),
+                    CGPoint(x: width * 0.5 + 1, y: height * 0.5 - 15),
+                    CGPoint(x: width * 0.5 - 1, y: height * 0.5 - 15),
+                    CGPoint(x: width * 0.5 - 1  , y: height * 0.5 - 95),
+                ])
+            }
+            .fill(Color.gray)
+    
+        }
+    }
+    
+}
+
 
 struct _1_SecDesign: View {
 //    static let symbolColor = UIColor(red: 79.0 / 255, green: 79.0 / 255, blue: 191.0 / 255, alpha: 1.0)
@@ -74,14 +107,11 @@ struct _1_SecDesign: View {
                 
             Path { path in
                 path.addLines([
-                    CGPoint(x: width * 0.5 , y: height * 0.5 - 130),
-//                    CGPoint(x: width * 0.5 + 2 , y: height * 0.5 - 120),
+                    CGPoint(x: width * 0.5 , y: height * 0.5 - 150),
                     CGPoint(x: width * 0.5 + 2, y: height * 0.5 - 20),
                     CGPoint(x: width * 0.5 + 3, y: height * 0.5 + 30),
                     CGPoint(x: width * 0.5 - 3, y: height * 0.5 + 30),
-                    CGPoint(x: width * 0.5 - 2, y: height * 0.5 - 20),
-                    
-//                    CGPoint(x: width * 0.5 - 2  , y: height * 0.5 - 120),
+                    CGPoint(x: width * 0.5 - 2, y: height * 0.5 - 20)
                 ])
                 
                 
@@ -99,7 +129,8 @@ struct _1_SecDesign: View {
 struct _1_HandDesign_Previews: PreviewProvider {
     static var previews: some View {
 //        _1_SecDesign()
-        _1_HandDesign()
+//        _1_HandDesign()
+        _1_MinDesign()
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .background(Color.black)
     }
