@@ -39,6 +39,7 @@ struct TimeMark: View {
                 }
             }
         }
+        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
     }
 }
 

@@ -81,11 +81,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        ZStack {
             
             TimeMark()
-            ClockView()
-            
+//            ClockView()
+            Demo()
 //            ZStack{
 //                TimeMark()
 //                ClockView()

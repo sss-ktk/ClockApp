@@ -28,28 +28,28 @@ struct _1_HandDesign: View {
                 path.addLines([
                     CGPoint(x: width * 0.5 , y: height * 0.5 - 130),
                     CGPoint(x: width * 0.5 + 2 , y: height * 0.5 - 120),
-                    CGPoint(x: width * 0.5 + 2, y: height * 0.5 - 10),
-                    CGPoint(x: width * 0.5 - 2, y: height * 0.5 - 10),
+                    CGPoint(x: width * 0.5 + 2, y: height * 0.5 - 5),
+                    CGPoint(x: width * 0.5 - 2, y: height * 0.5 - 5),
                     CGPoint(x: width * 0.5 - 2  , y: height * 0.5 - 120),
                 ])
-                
-                
             }.fill(Color.white)
             
             Path { path in
                 path.addLines([
                     CGPoint(x: width * 0.5 + 1 , y: height * 0.5 - 115),
-                    CGPoint(x: width * 0.5 + 1, y: height * 0.5 - 30),
-                    CGPoint(x: width * 0.5 - 1, y: height * 0.5 - 30),
+                    CGPoint(x: width * 0.5 + 1, y: height * 0.5 - 15),
+                    CGPoint(x: width * 0.5 - 1, y: height * 0.5 - 15),
                     CGPoint(x: width * 0.5 - 1  , y: height * 0.5 - 115),
                 ])
             }
             .fill(Color.gray)
 
-            Circle()
-                .frame(width: 12, height: 12)
-                .foregroundColor(Color.white)
-                .position(x: width * 0.5, y: height * 0.5 - 10)
+//            Circle()
+//                .frame(width: 12, height: 12)
+//                .foregroundColor(Color.white)
+////                .position(x: width * 0.5, y: height * 0.5 - 10)
+//                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+
         }
     }
     

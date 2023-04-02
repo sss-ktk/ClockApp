@@ -38,17 +38,11 @@ struct Demo: View {
                     .fill(.blue)
                     .opacity(0.5)
                     .frame(width: radius)
-//                    .position(x: width * 0.5, y: height * 0.5)
-                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
-
-                
                 
                 _1_HandDesign()
-//                    .position(x: width * 0.5, y: height * 0.5 - 40 - radius)
                     .rotationEffect(minuteHandRotation())
                 
                 _1_HandDesign()
-//                    .position(x: width * 0.5, y: height * 0.5 - 25 - radius)
                     .rotationEffect(hourHandRotation())
                 
                 _1_SecDesign()
