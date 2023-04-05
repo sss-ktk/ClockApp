@@ -80,38 +80,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-//        ZStack {
-//            TimeMark()
-////            ClockView()
-////            Demo(timeZone: TimeZone(identifier: "Asia/Tokyo")!)
-//        Demo(timeZone: TimeZone(identifier: "America/Los_Angeles")!)
-//        }
-        GeometryReader { geometry in
-            
-            let w = geometry.size.width
-            let h = geometry.size.height
-//            let w = UIScreen.main.bounds.width
-//            let h = UIScreen.main.bounds.height
-            VStack{
-                ZStack{
-                    TimeMark()
-                    Demo(timeZone: TimeZone(identifier: "Asia/Tokyo")!)
-                }.position(x: w/2, y: h/20)
-                ZStack{
-                    TimeMark()
-                    Demo(timeZone: TimeZone(identifier: "America/Los_Angeles")!)
-                }.position(x: w/2, y: h/40)
-            }
-        }
-        
+    @State private var selection: Tab = .Analog
+    
+    enum Tab {
+        case Analog
+        case Digital
     }
+    
+    var body: some View {
+        TabView(selection: $selection) {
+            AnalogView()
+                .tabItem{
+                    Label("Analog",
+                    systemImage: "star")
+                }
+                .tag(Tab.Analog)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .background(Color.black)
+            DigitalView()
+                .tabItem{
+                    Label("Digital",
+                    systemImage: "star")
+                }
+                .tag(Tab.Digital)
+            
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            .background(Color.black)
+            
     }
 }

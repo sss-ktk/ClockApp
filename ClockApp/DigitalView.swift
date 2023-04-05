@@ -14,7 +14,9 @@ struct DigitalView: View {
     
     init() {
         dateFormatter.dateFormat = "YYYY/MM/dd(E) \nHH:mm:ss"
-        dateFormatter.locale = Locale(identifier: "ja_jp")
+//        dateFormatter.locale = Locale(identifier: "ja_jp")
+        dateFormatter.locale = Locale(identifier: "en_EN")
+
     }
     
     var body: some View {
