@@ -38,7 +38,6 @@ struct Demo: View {
 //                _1_SecDesign(color: color)
 //                    .offset(y: -(hourHandLength/2) + 45)
 //                    .rotationEffect(secondHandRotation())
-//                _2_HandDesign(clockConfiguration: configColor)
                 _2_HandDesign(color: color)
                     .rotationEffect(minuteHandRotation())
                 

@@ -40,6 +40,7 @@ struct _2_HandDesign: View {
                 ])
             }
             .fill(color)
+            .opacity(0.8)
 
         }
     }
@@ -74,6 +75,7 @@ struct _2_MinDesign: View {
                 ])
             }
             .fill(color)
+//            .opacity(0.2)
     
         }
     }

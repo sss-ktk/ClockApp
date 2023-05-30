@@ -17,12 +17,20 @@ struct AnalogView: View {
             let w = geometry.size.width
             let h = geometry.size.height
             
-            ZStack{
-                TimeMark()
-                Demo(timeZone: clockConfiguration.timeZone, color: clockConfiguration.color)
-            }
-            .position(x: w/2, y: h/2)
-            .scaleEffect(0.8) //scale up or down
+            ZStack {
+                ZStack{
+                    TimeMark()
+                    Demo(timeZone: clockConfiguration.timeZone, color: clockConfiguration.color)
+                }
+                .position(x: w/2, y: h/8)
+                .scaleEffect(0.8)
+                ZStack{
+                    TimeMark()
+                    Demo(timeZone: clockConfiguration.timeZone, color: clockConfiguration.color)
+                }
+                .position(x: w/2, y: 7*h/8)
+                .scaleEffect(0.8)
+            } //scale up or down
            
 //            VStack{
 //                ZStack{
@@ -47,7 +55,6 @@ struct AnalogView: View {
 
 struct AnalogView_Previews: PreviewProvider {
     static var previews: some View {
-//        AnalogView(clockConfiguration(timeZone: TimeZone(identifier: "Asia/Tokyo")!, color: Color.red))
         AnalogView(clockConfiguration: ContentView.ClockConfiguration(timeZone: TimeZone(identifier: "Europe/London")!, color: Color.blue))
 //            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 //            .background(Color.black)

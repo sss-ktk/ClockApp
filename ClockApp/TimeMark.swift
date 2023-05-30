@@ -47,6 +47,6 @@ struct TimeMark_Previews: PreviewProvider {
     static var previews: some View {
         TimeMark()
 //            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-//            .background(Color.black)
+            .background(Color.black)
     }
 }
