@@ -10,9 +10,8 @@ import UIKit
 
 struct Demo: View {
     @State private var currentDate = Date()
-//    @State private var timeZone = TimeZone.current
     let timeZone: TimeZone
-
+    let color: Color
 
     private let timer = Timer.publish(every: 0.01, on: .current, in: .default).autoconnect()
     
@@ -22,7 +21,7 @@ struct Demo: View {
             let hourHandLength: CGFloat = 70
             
             let radius : CGFloat = 20
-            
+
             ZStack{
                
                 Circle()
@@ -30,13 +29,23 @@ struct Demo: View {
                     .opacity(0.5)
                     .frame(width: radius)
                 
-                _1_HandDesign()
+//                _1_HandDesign(color: color)
+//                    .rotationEffect(minuteHandRotation())
+//
+//                _1_MinDesign(color: color )
+//                    .rotationEffect(hourHandRotation())
+//
+//                _1_SecDesign(color: color)
+//                    .offset(y: -(hourHandLength/2) + 45)
+//                    .rotationEffect(secondHandRotation())
+//                _2_HandDesign(clockConfiguration: configColor)
+                _2_HandDesign(color: color)
                     .rotationEffect(minuteHandRotation())
                 
-                _1_MinDesign()
+                _2_MinDesign(color: color)
                     .rotationEffect(hourHandRotation())
                 
-                _1_SecDesign()
+                _2_SecDesign(color: color)
                     .offset(y: -(hourHandLength/2) + 45)
                     .rotationEffect(secondHandRotation())
             }
@@ -80,7 +89,8 @@ struct Demo: View {
 
 struct Demo_Previews: PreviewProvider {
     static var previews: some View {
-    Demo(timeZone: TimeZone(identifier: "America/Los_Angeles")!)
+//    Demo(timeZone: TimeZone(identifier: "America/Los_Angeles")!)
+        Demo(timeZone: TimeZone(identifier: "America/Los_Angeles")!, color: .red)
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .background(Color.gray)
     }

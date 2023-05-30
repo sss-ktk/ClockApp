@@ -15,15 +15,9 @@ struct _1_HandDesign: View {
         GeometryReader { geometry in
             let width = geometry.size.width
             let height = geometry.size.height
-            
 //            let screenHeight = UIScreen.main.bounds.height
 //            let screenWidth = UIScreen.main.bounds.width
-            
-//            let widthHalf = screenWidth / 2
-                
-//            let symbolColor = Color(red: 79.0 / 255, green: 79.0 / 255, blue: 191.0 / 255)
-//            let c2 = Color(red: 0 / 255, green: 79.0 / 255, blue: 191.0 / 255)
-                
+//            let widthHalf = screenWidth / 2                
             Path { path in
                 path.addLines([
                     CGPoint(x: width * 0.5 , y: height * 0.5 - 150),

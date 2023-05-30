@@ -10,7 +10,7 @@ import SwiftUI
 struct TimeMark: View {
     var body: some View {
         ZStack{
-            Color.black.edgesIgnoringSafeArea(.all)
+//            Color.black.edgesIgnoringSafeArea(.all)
             
             ForEach(0..<360, id: \.self) { num in
                 if (num % 30 == 0){
@@ -46,7 +46,7 @@ struct TimeMark: View {
 struct TimeMark_Previews: PreviewProvider {
     static var previews: some View {
         TimeMark()
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            .background(Color.black)
+//            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//            .background(Color.black)
     }
 }

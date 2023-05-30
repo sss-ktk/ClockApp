@@ -87,31 +87,55 @@ struct ContentView: View {
         case Digital
     }
     
+    struct ClockConfiguration {
+        var timeZone: TimeZone
+        var color: Color
+    }
+    
+    // Array of clock configurations, you can modify this array as per your needs
+    @State private var clockConfigurations: [ClockConfiguration] = [
+        ClockConfiguration(timeZone: TimeZone(identifier: "Asia/Tokyo")!, color: Color.red),
+        ClockConfiguration(timeZone: TimeZone(identifier: "America/Los_Angeles")!, color: Color.green),
+//        ClockConfiguration(timeZone: TimeZone(identifier: "Europe/London")!, color: Color.blue)
+    ]
+    
     var body: some View {
         TabView(selection: $selection) {
-            AnalogView()
-                .tabItem{
-                    Label("Analog",
-                    systemImage: "star")
+//            ForEach(clockConfigurations.indices, id: \.self) { index in
+//                AnalogView(clockConfiguration: clockConfigurations[index])
+//                    .tabItem{
+//                        Label("Analog \(index + 1)",
+//                        systemImage: "star")
+//                    }
+//                    .tag(index)
+//                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//                    .background(Color.black)
+//            }
+            VStack {
+                ForEach(clockConfigurations.indices, id: \.self) { configuration in
+                    AnalogView(clockConfiguration: clockConfigurations[configuration])
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / CGFloat(clockConfigurations.count))
+                        .background(Color.black)
                 }
-                .tag(Tab.Analog)
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                .background(Color.black)
+            }
+            .tabItem {
+                Label("Analog", systemImage: "star")
+            }
+            .tag(Tab.Analog)
+            
             DigitalView()
                 .tabItem{
                     Label("Digital",
                     systemImage: "star")
                 }
-                .tag(Tab.Digital)
+                .tag(clockConfigurations.count)
             
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            
     }
 }

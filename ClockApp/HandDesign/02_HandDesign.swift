@@ -7,15 +7,20 @@
 
 import SwiftUI
 
+
 struct _2_HandDesign: View {
 //    static let symbolColor = UIColor(red: 79.0 / 255, green: 79.0 / 255, blue: 191.0 / 255, alpha: 1.0)
 //    static let c2 = UIColor(red: 255 / 255, green: 79.0 / 255, blue: 191.0 / 255, alpha: 1.0)
-    
+//    let clockConfiguration: ContentView.ClockConfiguration
+    var color: Color
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
             let height = geometry.size.height
-                
+//            let clockConfiguration: ContentView.ClockConfiguration = <#value#>
+//            let configColor = clockConfiguration.color
+
+            
             Path { path in
                 path.addLines([
                     CGPoint(x: width * 0.5 , y: height * 0.5 - 150),
@@ -24,7 +29,7 @@ struct _2_HandDesign: View {
                     CGPoint(x: width * 0.5 - 2, y: height * 0.5 - 5),
                     CGPoint(x: width * 0.5 - 2  , y: height * 0.5 - 140),
                 ])
-            }.fill(Color.white)
+            }.fill(color)
             
             Path { path in
                 path.addLines([
@@ -34,26 +39,22 @@ struct _2_HandDesign: View {
                     CGPoint(x: width * 0.5 - 1  , y: height * 0.5 - 135),
                 ])
             }
-            .fill(Color.gray)
+            .fill(color)
 
-//            Circle()
-//                .frame(width: 12, height: 12)
-//                .foregroundColor(Color.white)
-////                .position(x: width * 0.5, y: height * 0.5 - 10)
-//                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
-            
         }
     }
     
 }
 
 struct _2_MinDesign: View {
-    
+//    let clockConfiguration: ContentView.ClockConfiguration
+    let color : Color
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
             let height = geometry.size.height
-                
+//            let configColor = clockConfiguration.color
+
             Path { path in
                 path.addLines([
                     CGPoint(x: width * 0.5 , y: height * 0.5 - 110),
@@ -62,7 +63,7 @@ struct _2_MinDesign: View {
                     CGPoint(x: width * 0.5 - 2, y: height * 0.5 - 5),
                     CGPoint(x: width * 0.5 - 2  , y: height * 0.5 - 100),
                 ])
-            }.fill(Color.white)
+            }.fill(color)
             
             Path { path in
                 path.addLines([
@@ -72,7 +73,7 @@ struct _2_MinDesign: View {
                     CGPoint(x: width * 0.5 - 1  , y: height * 0.5 - 95),
                 ])
             }
-            .fill(Color.gray)
+            .fill(color)
     
         }
     }
@@ -83,7 +84,7 @@ struct _2_MinDesign: View {
 struct _2_SecDesign: View {
 //    static let symbolColor = UIColor(red: 79.0 / 255, green: 79.0 / 255, blue: 191.0 / 255, alpha: 1.0)
 //    static let c2 = UIColor(red: 255 / 255, green: 79.0 / 255, blue: 191.0 / 255, alpha: 1.0)
-    
+    let color : Color
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
@@ -113,10 +114,11 @@ struct _2_SecDesign: View {
 
 struct _2_HandDesign_Previews: PreviewProvider {
     static var previews: some View {
-//        _1_SecDesign()
-//        _1_HandDesign()
-        _1_MinDesign()
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        _2_SecDesign(color: .blue)
+//        _2_HandDesign(color: .blue)
+//        _2_MinDesign(color: .blue)
+//            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .background(Color.black)
+
     }
 }
