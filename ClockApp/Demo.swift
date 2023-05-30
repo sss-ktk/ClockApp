@@ -19,18 +19,6 @@ struct Demo: View {
     var body: some View {
         GeometryReader { geometry in
             
-//            let width = geometry.size.width
-//            let height = geometry.size.height
-            //        let secondHandColor = Color(hex: "FF0000") // red
-//            let minuteHandColor = Color(hex: "00FF00") // green
-//            let hourHandColor = Color(hex: "00FF00")
-            
-//            let clockHandWidth: CGFloat = 4
-            //        let clockHandBorderWidth: CGFloat = 2
-            //        let clockHandBorderColor = Color(hex: "000000")
-            
-            //        let secondHandLength: CGFloat = 150
-//            let minuteHandLength: CGFloat = 100
             let hourHandLength: CGFloat = 70
             
             let radius : CGFloat = 20
