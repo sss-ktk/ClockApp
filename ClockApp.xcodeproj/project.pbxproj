@@ -20,6 +20,15 @@
 		B45D6932299C308C00920A68 /* ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D6931299C308C00920A68 /* ClockApp.swift */; };
 		B45D6936299C32DF00920A68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D6935299C32DF00920A68 /* ViewController.swift */; };
 		B4AC9BFF29DD2DA50099B95C /* AnalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9BFE29DD2DA50099B95C /* AnalogView.swift */; };
+		B4DAB6002A271E2500C68109 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB5FF2A271E2500C68109 /* Settings.swift */; };
+		B4DAB6042A2721F200C68109 /* ex1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB6032A2721F200C68109 /* ex1.swift */; };
+		B4DAB6062A281B5000C68109 /* ClockConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB6052A281B5000C68109 /* ClockConfigurationView.swift */; };
+		B4DAB6082A281B8300C68109 /* ClockConfigurationPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB6072A281B8300C68109 /* ClockConfigurationPopup.swift */; };
+		B4DAB60A2A281BA600C68109 /* TimeZonePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB6092A281BA600C68109 /* TimeZonePickerView.swift */; };
+		B4DAB60C2A281BB900C68109 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB60B2A281BB900C68109 /* ColorPickerView.swift */; };
+		B4DAB60E2A281C3500C68109 /* ClockSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB60D2A281C3500C68109 /* ClockSettingView.swift */; };
+		B4DAB6102A281C5D00C68109 /* TimezonePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB60F2A281C5D00C68109 /* TimezonePicker.swift */; };
+		B4DAB6122A281C8600C68109 /* ColorPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB6112A281C8600C68109 /* ColorPickerButton.swift */; };
 		B4EDBD6829B7FAAF00DB32B1 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDBD6729B7FAAF00DB32B1 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +49,15 @@
 		B45D6931299C308C00920A68 /* ClockApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockApp.swift; sourceTree = "<group>"; };
 		B45D6935299C32DF00920A68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B4AC9BFE29DD2DA50099B95C /* AnalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogView.swift; sourceTree = "<group>"; };
+		B4DAB5FF2A271E2500C68109 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B4DAB6032A2721F200C68109 /* ex1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ex1.swift; sourceTree = "<group>"; };
+		B4DAB6052A281B5000C68109 /* ClockConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockConfigurationView.swift; sourceTree = "<group>"; };
+		B4DAB6072A281B8300C68109 /* ClockConfigurationPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockConfigurationPopup.swift; sourceTree = "<group>"; };
+		B4DAB6092A281BA600C68109 /* TimeZonePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZonePickerView.swift; sourceTree = "<group>"; };
+		B4DAB60B2A281BB900C68109 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		B4DAB60D2A281C3500C68109 /* ClockSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSettingView.swift; sourceTree = "<group>"; };
+		B4DAB60F2A281C5D00C68109 /* TimezonePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimezonePicker.swift; sourceTree = "<group>"; };
+		B4DAB6112A281C8600C68109 /* ColorPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerButton.swift; sourceTree = "<group>"; };
 		B4EDBD6729B7FAAF00DB32B1 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,18 +110,24 @@
 		B45D6922299C2F8E00920A68 /* ClockApp */ = {
 			isa = PBXGroup;
 			children = (
+				B4DAB6022A271ED000C68109 /* Examples */,
+				B4DAB6012A271EA500C68109 /* Model */,
 				B434234329BA9176009EF812 /* HandDesign */,
 				B45D6931299C308C00920A68 /* ClockApp.swift */,
 				B45D6925299C2F8E00920A68 /* ContentView.swift */,
 				B4336FD929A28C4700E644E7 /* ClockView.swift */,
 				B4AC9BFE29DD2DA50099B95C /* AnalogView.swift */,
 				B4336FDB29A28CC500E644E7 /* DigitalView.swift */,
-				B4EDBD6729B7FAAF00DB32B1 /* TestView.swift */,
+				B434234A29CC3D6D009EF812 /* Demo.swift */,
 				B45D6927299C2F9000920A68 /* Assets.xcassets */,
 				B45D6929299C2F9000920A68 /* Preview Content */,
-				B434232129B9298C009EF812 /* AnalogClock.swift */,
-				B434232329B9315C009EF812 /* TimeMark.swift */,
-				B434234A29CC3D6D009EF812 /* Demo.swift */,
+				B4DAB6072A281B8300C68109 /* ClockConfigurationPopup.swift */,
+				B4DAB6052A281B5000C68109 /* ClockConfigurationView.swift */,
+				B4DAB6092A281BA600C68109 /* TimeZonePickerView.swift */,
+				B4DAB60B2A281BB900C68109 /* ColorPickerView.swift */,
+				B4DAB60D2A281C3500C68109 /* ClockSettingView.swift */,
+				B4DAB60F2A281C5D00C68109 /* TimezonePicker.swift */,
+				B4DAB6112A281C8600C68109 /* ColorPickerButton.swift */,
 			);
 			path = ClockApp;
 			sourceTree = "<group>";
@@ -115,6 +139,25 @@
 				B45D692A299C2F9000920A68 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B4DAB6012A271EA500C68109 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B434232329B9315C009EF812 /* TimeMark.swift */,
+				B4DAB5FF2A271E2500C68109 /* Settings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4DAB6022A271ED000C68109 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				B4EDBD6729B7FAAF00DB32B1 /* TestView.swift */,
+				B434232129B9298C009EF812 /* AnalogClock.swift */,
+				B4DAB6032A2721F200C68109 /* ex1.swift */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,17 +230,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DAB6122A281C8600C68109 /* ColorPickerButton.swift in Sources */,
+				B4DAB6102A281C5D00C68109 /* TimezonePicker.swift in Sources */,
+				B4DAB6082A281B8300C68109 /* ClockConfigurationPopup.swift in Sources */,
 				B4AC9BFF29DD2DA50099B95C /* AnalogView.swift in Sources */,
 				B4EDBD6829B7FAAF00DB32B1 /* TestView.swift in Sources */,
+				B4DAB6002A271E2500C68109 /* Settings.swift in Sources */,
 				B434234729BA91E1009EF812 /* 01_HandDesign.swift in Sources */,
+				B4DAB6042A2721F200C68109 /* ex1.swift in Sources */,
 				B438906929D9C0A500041680 /* 02_HandDesign.swift in Sources */,
+				B4DAB6062A281B5000C68109 /* ClockConfigurationView.swift in Sources */,
 				B45D6936299C32DF00920A68 /* ViewController.swift in Sources */,
 				B434234B29CC3D6D009EF812 /* Demo.swift in Sources */,
 				B4336FDA29A28C4700E644E7 /* ClockView.swift in Sources */,
 				B434232429B9315C009EF812 /* TimeMark.swift in Sources */,
 				B4336FDC29A28CC500E644E7 /* DigitalView.swift in Sources */,
+				B4DAB60E2A281C3500C68109 /* ClockSettingView.swift in Sources */,
 				B45D6932299C308C00920A68 /* ClockApp.swift in Sources */,
+				B4DAB60C2A281BB900C68109 /* ColorPickerView.swift in Sources */,
 				B45D6926299C2F8E00920A68 /* ContentView.swift in Sources */,
+				B4DAB60A2A281BA600C68109 /* TimeZonePickerView.swift in Sources */,
 				B434232229B9298C009EF812 /* AnalogClock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
