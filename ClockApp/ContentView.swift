@@ -19,7 +19,7 @@ struct ContentView: View {
         var color: Color
         
         var cityName: String {
-                    let calendar = Calendar.current
+//                    let calendar = Calendar.current
 //                    let components = calendar.dateComponents(in: timeZone, from: Date())
                     let cityName = timeZone.identifier.components(separatedBy: "/").last ?? ""
                     return cityName.replacingOccurrences(of: "_", with: " ")
@@ -68,8 +68,10 @@ struct ContentView: View {
                                         .font(.title)
                                         .foregroundColor(.white)
                                         .position(x: w/2, y: 200)
+                                    
                                     TimeMark()
                                     Demo(timeZone: clockConfigurations[0].timeZone, color: clockConfigurations[0].color)
+                                    
                                 }
                                 .position(x: w/2, y: h/8)
                                 .scaleEffect(0.8)
