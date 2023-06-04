@@ -19,6 +19,7 @@
 		B45D692B299C2F9000920A68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45D692A299C2F9000920A68 /* Preview Assets.xcassets */; };
 		B45D6932299C308C00920A68 /* ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D6931299C308C00920A68 /* ClockApp.swift */; };
 		B45D6936299C32DF00920A68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D6935299C32DF00920A68 /* ViewController.swift */; };
+		B4A15CD32A29E8010027D171 /* ClockConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A15CD22A29E8010027D171 /* ClockConfiguration.swift */; };
 		B4AC9BFF29DD2DA50099B95C /* AnalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9BFE29DD2DA50099B95C /* AnalogView.swift */; };
 		B4DAB6002A271E2500C68109 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB5FF2A271E2500C68109 /* Settings.swift */; };
 		B4DAB6042A2721F200C68109 /* ex1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAB6032A2721F200C68109 /* ex1.swift */; };
@@ -48,6 +49,7 @@
 		B45D692A299C2F9000920A68 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B45D6931299C308C00920A68 /* ClockApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockApp.swift; sourceTree = "<group>"; };
 		B45D6935299C32DF00920A68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B4A15CD22A29E8010027D171 /* ClockConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockConfiguration.swift; sourceTree = "<group>"; };
 		B4AC9BFE29DD2DA50099B95C /* AnalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogView.swift; sourceTree = "<group>"; };
 		B4DAB5FF2A271E2500C68109 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B4DAB6032A2721F200C68109 /* ex1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ex1.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				B4AC9BFE29DD2DA50099B95C /* AnalogView.swift */,
 				B4336FDB29A28CC500E644E7 /* DigitalView.swift */,
 				B434234A29CC3D6D009EF812 /* Demo.swift */,
+				B4A15CD22A29E8010027D171 /* ClockConfiguration.swift */,
 				B45D6927299C2F9000920A68 /* Assets.xcassets */,
 				B45D6929299C2F9000920A68 /* Preview Content */,
 				B4DAB6072A281B8300C68109 /* ClockConfigurationPopup.swift */,
@@ -235,6 +238,7 @@
 				B4DAB6082A281B8300C68109 /* ClockConfigurationPopup.swift in Sources */,
 				B4AC9BFF29DD2DA50099B95C /* AnalogView.swift in Sources */,
 				B4EDBD6829B7FAAF00DB32B1 /* TestView.swift in Sources */,
+				B4A15CD32A29E8010027D171 /* ClockConfiguration.swift in Sources */,
 				B4DAB6002A271E2500C68109 /* Settings.swift in Sources */,
 				B434234729BA91E1009EF812 /* 01_HandDesign.swift in Sources */,
 				B4DAB6042A2721F200C68109 /* ex1.swift in Sources */,

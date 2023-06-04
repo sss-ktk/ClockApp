@@ -11,14 +11,14 @@ import SwiftUI
 struct _2_HandDesign: View {
 //    static let symbolColor = UIColor(red: 79.0 / 255, green: 79.0 / 255, blue: 191.0 / 255, alpha: 1.0)
 //    static let c2 = UIColor(red: 255 / 255, green: 79.0 / 255, blue: 191.0 / 255, alpha: 1.0)
-//    let clockConfiguration: ContentView.ClockConfiguration
+//    let clockConfiguration: ClockConfiguration
     var color: Color
     var body: some View {
+//        var color = clockConfiguration.handColor
+
         GeometryReader { geometry in
             let width = geometry.size.width
             let height = geometry.size.height
-//            let clockConfiguration: ContentView.ClockConfiguration = <#value#>
-//            let configColor = clockConfiguration.color
 
             
             Path { path in
@@ -119,7 +119,7 @@ struct _2_HandDesign_Previews: PreviewProvider {
         _2_SecDesign(color: .blue)
 //        _2_HandDesign(color: .blue)
 //        _2_MinDesign(color: .blue)
-//            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .background(Color.black)
 
     }

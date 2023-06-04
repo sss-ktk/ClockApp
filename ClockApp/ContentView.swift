@@ -14,85 +14,51 @@ struct ContentView: View {
         case Analog
         case Digital
     }
-    struct ClockConfiguration {
-        var timeZone: TimeZone
-        var color: Color
-        
-        var cityName: String {
-//                    let calendar = Calendar.current
-//                    let components = calendar.dateComponents(in: timeZone, from: Date())
-                    let cityName = timeZone.identifier.components(separatedBy: "/").last ?? ""
-                    return cityName.replacingOccurrences(of: "_", with: " ")
-                }
-    }
+
     
-    @State private var clockConfigurations: [ClockConfiguration] = [
-        ClockConfiguration(timeZone: TimeZone(identifier: "Asia/Tokyo")!, color: Color.blue),
-        ClockConfiguration(timeZone: TimeZone(identifier: "America/New_York")!, color: Color.green)
+//    @State private var clockConfigurations: [ClockConfiguration] = [
+//        ClockConfiguration(timeZone: TimeZone(identifier: "Asia/Tokyo")!, color: Color.blue),
+//        ClockConfiguration(timeZone: TimeZone(identifier: "America/New_York")!, color: Color.green)
+//    ]
+    @EnvironmentObject var clockConfiguration: ClockConfiguration
+//    @EnvironmentObject var clockConfigurations: [ClockConfiguration] = [
+//    @State private var clockConfigurations: [ClockConfiguration] = [
+    var clockConfigurations: [ClockConfiguration] = [
+
+//        ClockConfiguration(timeZone: TimeZone(identifier: "Asia/Tokyo")!, color: Color.blue),
+//        ClockConfiguration(timeZone: TimeZone(identifier: "America/New_York")!, color: Color.green)
+        ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
+        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!)
     ]
     
 
     var body: some View {
         TabView(selection: $selection) {
-            //            ForEach(clockConfigurations.indices, id: \.self) { index in
-            //                AnalogView(clockConfiguration: clockConfigurations[index])
-            //                    .tabItem{
-            //                        Label("Analog \(index + 1)",
-            //                        systemImage: "star")
-            //                    }
-            //                    .tag(index)
-            //                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            //                    .background(Color.black)
-            //            }
-            
-            
-            //            VStack {
-            //                ForEach(clockConfigurations.indices, id: \.self) { configuration in
-            //                    AnalogView(clockConfiguration: clockConfigurations[configuration])
-            //                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / CGFloat(clockConfigurations.count))
-            //                        .background(Color.black)
-            //                }
-            //            }
-            
-            
-//            VStack {
-                GeometryReader { geometry in
-                    
+            GeometryReader { geometry in
+
                     let w = geometry.size.width
                     let h = geometry.size.height
-                    
+
                     ZStack {
                         ForEach(clockConfigurations.indices, id: \.self) { index in
-                                ZStack{
-                                    Text(clockConfigurations[0].cityName)
-                                        .font(.title)
-                                        .foregroundColor(.white)
-                                        .position(x: w/2, y: 200)
-                                    
-                                    TimeMark()
-                                    Demo(timeZone: clockConfigurations[0].timeZone, color: clockConfigurations[0].color)
-                                    
-                                }
-                                .position(x: w/2, y: h/8)
-                                .scaleEffect(0.8)
-                                .background(Color.black)
-                            
-
                             ZStack{
-                                Text(clockConfigurations[1].cityName)
-                                    .font(.title)
-                                    .foregroundColor(.white)
-                                    .position(x: w/2, y: 200)
-                                TimeMark()
-                                Demo(timeZone: clockConfigurations[1].timeZone, color: clockConfigurations[1].color)
+                                AnalogClock(clockConfiguration: clockConfigurations[0])
+                            }
+                            .position(x: w/2, y: h/8)
+                            .scaleEffect(0.8)
+                            .background(Color.black)
+                            
+                            ZStack{
+                                AnalogClock(clockConfiguration: clockConfigurations[1])
                             }
                             .position(x: w/2, y: 7*h/8 - 100)
                             .scaleEffect(0.8)
 
-                            
                         }
                     }
                 }
+//                AnalogView()
+//                .background(.black)
                 .tabItem {
                     Label("Analog", systemImage: "star")
                 }
@@ -104,8 +70,6 @@ struct ContentView: View {
                               systemImage: "star")
                     }
                     .tag(Tab.Digital)
-
-                
         }
     }
 }

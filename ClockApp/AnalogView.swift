@@ -8,55 +8,74 @@
 import SwiftUI
 
 struct AnalogView: View {
-    var clockConfiguration: ContentView.ClockConfiguration
-
+    var clockConfigurations = [ClockConfiguration]()
+//    var clockConfigurations = ContentView.clockConfigurations
     var body: some View {
-        
         GeometryReader { geometry in
+            let clockCount = clockConfigurations.count
             
-            let w = geometry.size.width
-            let h = geometry.size.height
-            
-            ZStack {
-                ZStack{
-                    TimeMark()
-                    Demo(timeZone: clockConfiguration.timeZone, color: clockConfiguration.color)
+            switch clockCount {
+            case 0:
+                EmptyView()
+            case 1:
+                let configuration = clockConfigurations[0]
+//                AnalogClock(configuration.handColor, configuration.labelColor, configuration.timeZone)
+                AnalogClock(clockConfiguration: configuration)
+                
+            case 2:
+                let configuration1 = clockConfigurations[0]
+                let configuration2 = clockConfigurations[1]
+                VStack(spacing: 0) {
+                    AnalogClock(clockConfiguration: configuration1)
+                    Divider()
+                    AnalogClock(clockConfiguration: configuration2)
                 }
-                .position(x: w/2, y: h/8)
-                .scaleEffect(0.8)
-                ZStack{
-                    TimeMark()
-                    Demo(timeZone: clockConfiguration.timeZone, color: clockConfiguration.color)
+            case 3:
+                let configuration1 = clockConfigurations[0]
+                let configuration2 = clockConfigurations[1]
+                let configuration3 = clockConfigurations[2]
+                VStack(spacing: 0) {
+                    VStack(spacing: 0) {
+                        AnalogClock(clockConfiguration: configuration1)
+                        Divider()
+                        HStack(spacing: 0) {
+                            AnalogClock(clockConfiguration: configuration2)
+                            Divider()
+                            AnalogClock(clockConfiguration: configuration3)
+                        }
+                    }
                 }
-                .position(x: w/2, y: 7*h/8)
-                .scaleEffect(0.8)
-            } //scale up or down
-           
-//            VStack{
-//                ZStack{
-//                    TimeMark()
-//                    Demo(timeZone: TimeZone(identifier: "Asia/Tokyo")!)
-//                }
-//                .position(x: w/2, y: h/20)
-//                .scaleEffect(0.8) //scale up or down
-//
-//                ZStack{
-//                    TimeMark()
-//                    Demo(timeZone: TimeZone(identifier: "America/Los_Angeles")!)
-//                }
-//                .position(x: w/2, y: h/40)
-//                .scaleEffect(0.8) //scale up or down
-//
-//            }
+            case 4:
+                                let configuration1 = clockConfigurations[0]
+                                let configuration2 = clockConfigurations[1]
+                                let configuration3 = clockConfigurations[2]
+                                let configuration4 = clockConfigurations[3]
+                VStack(spacing: 0) {
+                    HStack(spacing: 0) {
+                        AnalogClock(clockConfiguration: configuration1)
+                        Divider()
+                        AnalogClock(clockConfiguration: configuration2)
+                    }
+                    Divider()
+                    HStack(spacing: 0) {
+                        AnalogClock(clockConfiguration: configuration3)
+                        Divider()
+                        AnalogClock(clockConfiguration: configuration4)
+                    }
+                }
+            default:
+                EmptyView()
+            }
         }
-        
     }
 }
 
 struct AnalogView_Previews: PreviewProvider {
     static var previews: some View {
-        AnalogView(clockConfiguration: ContentView.ClockConfiguration(timeZone: TimeZone(identifier: "Europe/London")!, color: Color.blue))
+        let clockconfig = [ClockConfiguration]()
+//        AnalogView(ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!))
+        AnalogView(clockConfigurations: clockconfig)
 //            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-//            .background(Color.black)
+            .background(Color.black)
     }
 }

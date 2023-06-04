@@ -16,12 +16,12 @@ struct TimezonePicker: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.horizontal)
 
-            List(timezones) { timezone in
-                Text(timezone.identifier)
-                    .onTapGesture {
-                        self.selectedTimezone = timezone
-                    }
-            }
+//            List(timezones) { timezone in
+//                Text(timezone.identifier)
+//                    .onTapGesture {
+//                        self.selectedTimezone = timezone
+//                    }
+//            }
         }
         .onAppear {
             self.timezones = TimeZone.knownTimeZoneIdentifiers.compactMap { TimeZone(identifier: $0) }

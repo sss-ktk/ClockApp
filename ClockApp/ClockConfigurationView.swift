@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct ClockConfigurationView: View {
-    @Binding var clockConfiguration: ClockConfiguration
-
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(clockConfiguration.cityName)
-                    .font(.headline)
-                Text("TimeZone: \(clockConfiguration.timeZone.identifier)")
-                Text("Hand Color: \(clockConfiguration.color.description)")
-                Text("Label Color: \(clockConfiguration.labelColor.description)")
+//                Text(ClockConfiguration.cityName)
+//                    .font(.headline)
+//                Text("TimeZone: \(ClockConfiguration.timeZone.identifier)")
+//                Text("Hand Color: \(ClockConfiguration.handColor.description)")
+//                Text("Label Color: \(clockConfiguration.labelColor.description)")
             }
             Spacer()
             Button(action: {
