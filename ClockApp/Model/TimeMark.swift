@@ -18,28 +18,28 @@ struct TimeMark: View {
                         Rectangle()
 //                            .offset(y: -150)
                             .position(y: -150)
-                            .frame(maxWidth: 4, maxHeight: 10)
+                            .frame(maxWidth: 4, maxHeight: 15)
                             .foregroundColor(.white)
                             .rotationEffect(.degrees(Double(num)))
-                            .opacity(0.4)
+//                            .opacity(0.4)
                     }
                     else if (num % 6 == 0) {
+                        Rectangle()
+//                            .offset(y: -150)
+                            .position(y: -150)
+                            .frame(maxWidth: 1, maxHeight: 8)
+                            .foregroundColor(.white)
+                            .rotationEffect(.degrees(Double(num)))
+                            .opacity(0.5)
+                    }
+                    else if (num % 3 == 0) {
                         Rectangle()
 //                            .offset(y: -150)
                             .position(y: -150)
                             .frame(maxWidth: 1, maxHeight: 5)
                             .foregroundColor(.white)
                             .rotationEffect(.degrees(Double(num)))
-                            .opacity(0.2)
-                    }
-                    else if (num % 3 == 0) {
-                        Rectangle()
-//                            .offset(y: -150)
-                            .position(y: -150)
-                            .frame(maxWidth: 1, maxHeight: 3)
-                            .foregroundColor(.white)
-                            .rotationEffect(.degrees(Double(num)))
-                            .opacity(0.2)
+                            .opacity(0.5)
                     }
                 }
             }

@@ -28,37 +28,16 @@ struct ContentView: View {
 //        ClockConfiguration(timeZone: TimeZone(identifier: "Asia/Tokyo")!, color: Color.blue),
 //        ClockConfiguration(timeZone: TimeZone(identifier: "America/New_York")!, color: Color.green)
         ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
-        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!)
+        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!),
+        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!),
+//        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "Europe/London")!),
     ]
     
 
     var body: some View {
         TabView(selection: $selection) {
-            GeometryReader { geometry in
-
-                    let w = geometry.size.width
-                    let h = geometry.size.height
-
-                    ZStack {
-                        ForEach(clockConfigurations.indices, id: \.self) { index in
-                            ZStack{
-                                AnalogClock(clockConfiguration: clockConfigurations[0])
-                            }
-                            .position(x: w/2, y: h/8)
-                            .scaleEffect(0.8)
-                            .background(Color.black)
-                            
-                            ZStack{
-                                AnalogClock(clockConfiguration: clockConfigurations[1])
-                            }
-                            .position(x: w/2, y: 7*h/8 - 100)
-                            .scaleEffect(0.8)
-
-                        }
-                    }
-                }
-//                AnalogView()
-//                .background(.black)
+                AnalogView(clockConfigurations: clockConfigurations)
+                .background(.black)
                 .tabItem {
                     Label("Analog", systemImage: "star")
                 }
