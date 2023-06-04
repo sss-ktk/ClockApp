@@ -9,6 +9,13 @@ import SwiftUI
 
 struct AnalogView: View {
     var clockConfigurations = [ClockConfiguration]()
+//    var clockConfigurations: [ClockConfiguration] = [
+//
+////        ClockConfiguration(timeZone: TimeZone(identifier: "Asia/Tokyo")!, color: Color.blue),
+////        ClockConfiguration(timeZone: TimeZone(identifier: "America/New_York")!, color: Color.green)
+//        ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
+//        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!)
+//    ]
 //    var clockConfigurations = ContentView.clockConfigurations
     var body: some View {
         GeometryReader { geometry in
@@ -40,27 +47,33 @@ struct AnalogView: View {
                         Divider()
                         HStack(spacing: 0) {
                             AnalogClock(clockConfiguration: configuration2)
+                                .scaleEffect(0.6)
                             Divider()
                             AnalogClock(clockConfiguration: configuration3)
+                                .scaleEffect(0.6)
                         }
                     }
                 }
             case 4:
-                                let configuration1 = clockConfigurations[0]
-                                let configuration2 = clockConfigurations[1]
-                                let configuration3 = clockConfigurations[2]
-                                let configuration4 = clockConfigurations[3]
+                let configuration1 = clockConfigurations[0]
+                let configuration2 = clockConfigurations[1]
+                let configuration3 = clockConfigurations[2]
+                let configuration4 = clockConfigurations[3]
                 VStack(spacing: 0) {
-                    HStack(spacing: 0) {
+                    HStack(spacing: 2) {
                         AnalogClock(clockConfiguration: configuration1)
+                            .scaleEffect(0.6)
                         Divider()
                         AnalogClock(clockConfiguration: configuration2)
+                            .scaleEffect(0.6)
                     }
-                    Divider()
-                    HStack(spacing: 0) {
+//                    Divider()
+                    HStack(spacing: 2) {
                         AnalogClock(clockConfiguration: configuration3)
+                            .scaleEffect(0.6)
                         Divider()
                         AnalogClock(clockConfiguration: configuration4)
+                            .scaleEffect(0.6)
                     }
                 }
             default:
@@ -72,7 +85,14 @@ struct AnalogView: View {
 
 struct AnalogView_Previews: PreviewProvider {
     static var previews: some View {
-        let clockconfig = [ClockConfiguration]()
+//        let clockconfig = [ClockConfiguration]()
+        let clockconfig: [ClockConfiguration] = [
+
+            ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
+            ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!),
+            ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/Los_Angeles")!),
+            ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "Europe/London")!)
+        ]
 //        AnalogView(ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!))
         AnalogView(clockConfigurations: clockconfig)
 //            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
