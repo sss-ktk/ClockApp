@@ -33,9 +33,10 @@ struct AddClockView: View {
                         Button(action: {
                             selectedTimezone = timezone.timezone
                         }) {
-                            Text(timezone.identifier)
+                            Text(timezone.identifier.replacingOccurrences(of: "_", with: " "))
                         }
                     }
+
                 }
                 .padding()
             }
@@ -82,11 +83,20 @@ struct AddClockView: View {
             }
         }
         return TimeZone.knownTimeZoneIdentifiers
-            .filter { $0.localizedCaseInsensitiveContains(searchText) }
+            .filter { timezoneIdentifier in
+                let searchComponents = searchText.components(separatedBy: " ")
+                let timezoneComponents = timezoneIdentifier.components(separatedBy: "/")
+                return searchComponents.allSatisfy { searchComponent in
+                    timezoneComponents.contains { timezoneComponent in
+                        timezoneComponent.localizedCaseInsensitiveContains(searchComponent)
+                    }
+                }
+            }
             .compactMap { identifier in
                 TimezoneWrapper(identifier: identifier)
             }
     }
+
     
     @State private var searchText: String = ""
 }
