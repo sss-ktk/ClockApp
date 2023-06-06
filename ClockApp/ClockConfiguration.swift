@@ -65,29 +65,39 @@ class ClockConfiguration: ObservableObject, Identifiable {
     // Other properties and methods
     
 }
+class ClockConfigurationStore: ObservableObject {
+    @Published var clockConfigurations: [ClockConfiguration] = [
+        ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
+        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!),
+        ClockConfiguration(handColor: .red, labelColor: .red, timeZone: TimeZone(identifier: "America/Los_Angeles")!),
+    ]
+    let maxClocks = 4
 
-//class ClockConfigurations: ObservableObject {
-//    @Published var configurations: [ClockConfiguration] = []
-//
-//    func addDefaultConfiguration() {
-//        let defaultConfiguration = ClockConfiguration.defaultConfiguration
-//        configurations.append(defaultConfiguration)
-//    }
-//
-//    func updateConfiguration(_ configuration: ClockConfiguration) {
-//        if let index = configurations.firstIndex(where: { $0.id == configuration.id }) {
-//            configurations[index] = configuration
+//    func addClockConfiguration() {
+//        guard clockConfigurations.count < maxClocks else {
+//                    return
 //        }
+//        let defaultConfiguration = ClockConfiguration.defaultConfiguration
+//        clockConfigurations.append(defaultConfiguration)
 //    }
-//
-//    func deleteConfiguration(_ configuration: ClockConfiguration) {
-//        configurations.removeAll(where: { $0.id == configuration.id })
-//    }
-//}
-//
-//extension ClockConfiguration: Equatable {
-//    static func == (lhs: ClockConfiguration, rhs: ClockConfiguration) -> Bool {
-//        return lhs.id == rhs.id
-//    }
-//}
+    func addClockConfiguration(_ configuration: ClockConfiguration) {
+        guard clockConfigurations.count < maxClocks else {
+                    return
+        }
+        clockConfigurations.append(configuration)
+    }
+    
+    func deleteClockConfiguration(at index: Int) {
+        guard index >= 0 && index < clockConfigurations.count else {
+            return
+        }
+        clockConfigurations.remove(at: index)
+    }
+    func updateClockConfiguration(_ oldConfiguration: ClockConfiguration, with newConfiguration: ClockConfiguration) {
+        guard let index = clockConfigurations.firstIndex(where: { $0.id == oldConfiguration.id }) else {
+            return
+        }
+        clockConfigurations[index] = newConfiguration
+    }
+}
 

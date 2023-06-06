@@ -13,35 +13,33 @@ struct ContentView: View {
     enum Tab {
         case Analog
         case Digital
+//        case Settings
     }
 
-    
-//    @State private var clockConfigurations: [ClockConfiguration] = [
-//        ClockConfiguration(timeZone: TimeZone(identifier: "Asia/Tokyo")!, color: Color.blue),
-//        ClockConfiguration(timeZone: TimeZone(identifier: "America/New_York")!, color: Color.green)
-//    ]
     @EnvironmentObject var clockConfiguration: ClockConfiguration
-//    @EnvironmentObject var clockConfigurations: [ClockConfiguration] = [
-//    @State private var clockConfigurations: [ClockConfiguration] = [
-    var clockConfigurations: [ClockConfiguration] = [
+    @EnvironmentObject var clockConfigurationStore: ClockConfigurationStore
 
-//        ClockConfiguration(timeZone: TimeZone(identifier: "Asia/Tokyo")!, color: Color.blue),
-//        ClockConfiguration(timeZone: TimeZone(identifier: "America/New_York")!, color: Color.green)
-        ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
-        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!),
-        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!),
-//        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "Europe/London")!),
-    ]
+    
+//    var clockConfigurations: [ClockConfiguration] = [
+//        ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
+//        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!),
+//        ClockConfiguration(handColor: .red, labelColor: .red, timeZone: TimeZone(identifier: "America/Los_Angeles")!),
+////        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "Europe/London")!),
+//    ]
     
 
     var body: some View {
-        TabView(selection: $selection) {
-                AnalogView(clockConfigurations: clockConfigurations)
-                .background(.black)
-                .tabItem {
-                    Label("Analog", systemImage: "star")
-                }
-                .tag(Tab.Analog)
+        NavigationView {
+            
+            TabView(selection: $selection) {
+                //                AnalogView(clockConfigurations: clockConfigurations)
+                AnalogView()
+                
+                    .background(.black)
+                    .tabItem {
+                        Label("Analog", systemImage: "star")
+                    }
+                    .tag(Tab.Analog)
                 
                 DigitalView()
                     .tabItem{
@@ -49,6 +47,15 @@ struct ContentView: View {
                               systemImage: "star")
                     }
                     .tag(Tab.Digital)
+            }
+            .navigationBarTitle("Clock App")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: Settings()) {
+                        Image(systemName: "gearshape")
+                    }
+                }
+            }
         }
     }
 }
@@ -56,6 +63,7 @@ struct ContentView: View {
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
+                .environmentObject(ClockConfigurationStore())
         }
     }
 

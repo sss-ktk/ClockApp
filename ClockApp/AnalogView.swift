@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct AnalogView: View {
-    var clockConfigurations = [ClockConfiguration]()
-//    var clockConfigurations: [ClockConfiguration] = [
-//
-////        ClockConfiguration(timeZone: TimeZone(identifier: "Asia/Tokyo")!, color: Color.blue),
-////        ClockConfiguration(timeZone: TimeZone(identifier: "America/New_York")!, color: Color.green)
-//        ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
-//        ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!)
-//    ]
-//    var clockConfigurations = ContentView.clockConfigurations
+//    var clockConfigurations = [ClockConfiguration]()
+    @EnvironmentObject var clockConfigurationStore: ClockConfigurationStore
+
+//    var clockConfigurations = ClockConfigurationStore()
+
     var body: some View {
         GeometryReader { geometry in
-            let clockCount = clockConfigurations.count
+//            let clockCount = clockConfigurations.count
+            let clockConfigurations = clockConfigurationStore.clockConfigurations
+                        let clockCount = clockConfigurations.count
             
             switch clockCount {
             case 0:
@@ -84,18 +82,32 @@ struct AnalogView: View {
 }
 
 struct AnalogView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        let clockconfig = [ClockConfiguration]()
+//        let clockconfig: [ClockConfiguration] = [
+//
+//            ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
+//            ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!),
+//            ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/Los_Angeles")!),
+//            ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "Europe/London")!)
+//        ]
+////        AnalogView(ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!))
+//        AnalogView(clockConfigurations: clockconfig)
+////            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//            .background(Color.black)
+//    }
     static var previews: some View {
-//        let clockconfig = [ClockConfiguration]()
-        let clockconfig: [ClockConfiguration] = [
+            let clockConfigurationStore = ClockConfigurationStore()
+            clockConfigurationStore.clockConfigurations = [
+                ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
+                ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!),
+                ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/Los_Angeles")!),
+                ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "Europe/London")!)
+            ]
 
-            ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!),
-            ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/New_York")!),
-            ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "America/Los_Angeles")!),
-            ClockConfiguration(handColor: .blue, labelColor: .blue, timeZone: TimeZone(identifier: "Europe/London")!)
-        ]
-//        AnalogView(ClockConfiguration(handColor: .white, labelColor: .white, timeZone: TimeZone(identifier: "Asia/Tokyo")!))
-        AnalogView(clockConfigurations: clockconfig)
-//            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            .background(Color.black)
-    }
+            return AnalogView()
+                .environmentObject(clockConfigurationStore)
+                .background(Color.black)
+        }
 }
+

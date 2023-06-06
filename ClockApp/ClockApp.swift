@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ClockApp: App {
+    let clockConfigurationStore = ClockConfigurationStore()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(clockConfigurationStore)
         }
     }
 }
