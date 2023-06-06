@@ -33,7 +33,7 @@ struct AddClockView: View {
                         Button(action: {
                             selectedTimezone = timezone.timezone
                         }) {
-                            Text(timezone.identifier.replacingOccurrences(of: "_", with: " "))
+                            Text(timezone.displayName)
                         }
                     }
 
@@ -79,12 +79,16 @@ struct AddClockView: View {
     private var filteredTimezones: [TimezoneWrapper] {
         guard !searchText.isEmpty else {
             return TimeZone.knownTimeZoneIdentifiers.compactMap { identifier in
-                TimezoneWrapper(identifier: identifier)
+                let components = identifier.components(separatedBy: "/")
+                let city = components.last?.replacingOccurrences(of: "_", with: " ") ?? ""
+                let country = components.dropLast().last?.replacingOccurrences(of: "_", with: " ") ?? ""
+                let displayName = "\(city), \(country)"
+                return TimezoneWrapper(identifier: identifier, displayName: displayName)
             }
         }
+        let searchComponents = searchText.components(separatedBy: CharacterSet.whitespacesAndNewlines).filter { !$0.isEmpty }
         return TimeZone.knownTimeZoneIdentifiers
             .filter { timezoneIdentifier in
-                let searchComponents = searchText.components(separatedBy: " ")
                 let timezoneComponents = timezoneIdentifier.components(separatedBy: "/")
                 return searchComponents.allSatisfy { searchComponent in
                     timezoneComponents.contains { timezoneComponent in
@@ -93,9 +97,15 @@ struct AddClockView: View {
                 }
             }
             .compactMap { identifier in
-                TimezoneWrapper(identifier: identifier)
+                let components = identifier.components(separatedBy: "/")
+                let city = components.last?.replacingOccurrences(of: "_", with: " ") ?? ""
+                let country = components.dropLast().last?.replacingOccurrences(of: "_", with: " ") ?? ""
+                let displayName = "\(city), \(country)"
+                return TimezoneWrapper(identifier: identifier, displayName: displayName)
             }
     }
+
+
 
     
     @State private var searchText: String = ""
@@ -114,8 +124,9 @@ struct AddClockView_Previews: PreviewProvider {
 struct TimezoneWrapper: Identifiable {
     let id = UUID()
     let identifier: String
+    let displayName: String
+    
     var timezone: TimeZone {
         TimeZone(identifier: identifier)!
     }
 }
-
