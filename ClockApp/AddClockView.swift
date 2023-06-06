@@ -29,14 +29,19 @@ struct AddClockView: View {
                 SearchBar(text: $searchText)
                 
                 ScrollView {
-                    ForEach(filteredTimezones) { timezone in
-                        Button(action: {
-                            selectedTimezone = timezone.timezone
-                        }) {
-                            Text(timezone.displayName)
+                    LazyVStack(alignment: .leading) {
+                        ForEach(filteredTimezones) { timezone in
+                            Button(action: {
+                                selectedTimezone = timezone.timezone
+                            }) {
+                                HStack {
+                                    Text(timezone.displayName)
+                                    Spacer()
+                                }
+                            }
+                            .padding(.vertical, 4)
                         }
                     }
-
                 }
                 .padding()
             }
