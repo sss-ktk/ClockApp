@@ -13,34 +13,42 @@ struct TimeMark: View {
             ZStack{
     //            Color.black.edgesIgnoringSafeArea(.all)
                 
-                ForEach(0..<360, id: \.self) { num in
-                    if (num % 30 == 0){
-                        Rectangle()
-//                            .offset(y: -150)
-                            .position(y: -150)
-                            .frame(maxWidth: 4, maxHeight: 15)
-                            .foregroundColor(.white)
-                            .rotationEffect(.degrees(Double(num)))
-//                            .opacity(0.4)
-                    }
-                    else if (num % 6 == 0) {
-                        Rectangle()
-//                            .offset(y: -150)
-                            .position(y: -150)
-                            .frame(maxWidth: 1, maxHeight: 8)
-                            .foregroundColor(.white)
-                            .rotationEffect(.degrees(Double(num)))
-                            .opacity(0.5)
-                    }
-                    else if (num % 3 == 0) {
-                        Rectangle()
-//                            .offset(y: -150)
-                            .position(y: -150)
-                            .frame(maxWidth: 1, maxHeight: 5)
-                            .foregroundColor(.white)
-                            .rotationEffect(.degrees(Double(num)))
-                            .opacity(0.5)
-                    }
+//                ForEach(0..<360, id: \.self) { num in
+//                    if (num % 30 == 0){
+//                        Rectangle()
+////                            .offset(y: -150)
+//                            .position(y: -150)
+//                            .frame(maxWidth: 4, maxHeight: 15)
+//                            .foregroundColor(.white)
+//                            .rotationEffect(.degrees(Double(num)))
+////                            .opacity(0.4)
+//                    }
+//                    else if (num % 6 == 0) {
+//                        Rectangle()
+////                            .offset(y: -150)
+//                            .position(y: -150)
+//                            .frame(maxWidth: 1, maxHeight: 8)
+//                            .foregroundColor(.white)
+//                            .rotationEffect(.degrees(Double(num)))
+//                            .opacity(0.5)
+//                    }
+//                    else if (num % 3 == 0) {
+//                        Rectangle()
+////                            .offset(y: -150)
+//                            .position(y: -150)
+//                            .frame(maxWidth: 1, maxHeight: 5)
+//                            .foregroundColor(.white)
+//                            .rotationEffect(.degrees(Double(num)))
+//                            .opacity(0.5)
+//                    }
+//                }
+                ForEach(0..<60) { tick in
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(width: 3, height: tick % 5 == 0 ? 15 : 7)
+                        .offset(y: 300 / 2)
+                        .rotationEffect(.degrees(Double(tick) / 60 * 360))
+                        .opacity(tick % 5 == 0 ? 0.9 : 0.5)
                 }
             }
 //            .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
